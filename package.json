@@ -1,0 +1,32 @@
+{
+  "name": "controlhookupload",
+  "version": "1.0.7",
+  "description": "upload for ant upload",
+  "main": "/dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "qsm",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^7.1.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "antd": "3.23.6",
+    "react": "^16.8.6",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "^16.8.6",
+    "umi-request": "1.0.8"
+  },
+  "files": ["/dist", "package.json"]
+}
