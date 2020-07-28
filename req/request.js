@@ -53,7 +53,7 @@ const requestExtend = extend({
   timeout: 10000,
   errorHandler,
   // 默认错误处理
-  // credentials: 'include', // 默认请求是否带上cookie
+  credentials: 'include', // 默认请求是否带上cookie
 });
 
 const requestExtendWithoutPrefix = extend({
@@ -61,14 +61,16 @@ const requestExtendWithoutPrefix = extend({
   timeout: 10000,
   errorHandler,
   // 默认错误处理
-  // credentials: 'include', // 默认请求是否带上cookie
+  credentials: 'include', // 默认请求是否带上cookie
 }); 
 
 const request = async (url, params) => {
-  const token = window.localStorage.getItem('purchase_token');
+  // const token = window.localStorage.getItem('purchase_token');
   // console.log(token, '__________________________________________________________________')
   let headers = params.headers || {};
-  params.headers = Object.assign(headers, { token });
+  params.headers = Object.assign(headers, { 
+    'app-code': 'XINPIN'
+  });
 
   const requestApi = url.startsWith('http') ? requestExtendWithoutPrefix:  requestExtend ;
   // debugger;

@@ -1,44 +1,25 @@
+export const env = (() => {
+  const host = window.location.host;
+  if (host.indexOf('daily') > -1) {
+    return `daily`
+  } else if (host.indexOf('dev') > -1) {
+    return `dev`
+  } else if (host.indexOf('gray.') > -1) {
+    return 'gray'
+  } else if (host.indexOf('localhost') > -1) {
+    return 'daily'
+  }
+  return 'prod';
+})()
+
+console.log(env)
+
 export const href = (() => {
-    // console.log(decodeURIComponent(getPageQuery().env))
-    if (localStorage.env) {
-      return localStorage.env
-    }
-    
-    // return 'https://dev-api.xinc818.com/'
-    const host = window.location.host;
-    if (host.indexOf('daily') > -1) {
-      return `https://daily-api.xinc818.com/`
-    } else if (host.indexOf('dev') > -1) {
-      return `https://dev-api.xinc818.com/`
-    } else if (host.indexOf('mock') > -1) {
-      return 'https://mock.xinc818.com/mock/50/'
-    } else if (host.indexOf('pms.') > -1) {
-      return 'https://api.xinc818.com/'
-    }
-  
-    
-    return 'https://daily-api.xinc818.com/'
-    let res = '';
-    switch (host) {
-      case 'daily-xinxuan-system.xinc818.com':
-        res = 'https://daily-api.xinc818.com/';
-        break;
-      case 'gray-xinxuan-system.xinc818.com':
-        res = 'https://gray-api.xinc818.com/';
-        break;
-      case 'dev-xinxuan-system.xinc818.com':
-        res = 'https://dev-api.xinc818.com/';
-        break;
-      case 'xinxuan-system.xinc818.com':
-        res = 'https://api.xinc818.com/';
-        break;
-      case 'test.xinc818.com:8000':
-        res = 'https://dev-api.xinc818.com/';
-        // res = 'http://192.168.10.112:8080/';
-        break;
-      default:
-        return (res = '');
-    }
-    // return 'https://dev-api.xinc818.com/'
-    return res;
-  })();
+  const hrefs = {
+    daily: `https://api.daily.xinc818.net/`,
+    dev: `https://api.dev.xinc818.net/`,
+    gray: `https://api.gray.xinc818.net/`,
+    prod: `https://api.xinc818.net/`,
+  }
+  return localStorage.env || hrefs[env];
+})();
