@@ -1,6 +1,6 @@
 {
   "name": "controlhookupload",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "upload for ant upload",
   "main": "/dist/bundle.js",
   "scripts": {

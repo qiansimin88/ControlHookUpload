@@ -19,7 +19,7 @@ export const href = (() => {
     daily: `https://api.daily.xinc818.net/`,
     dev: `https://api.dev.xinc818.net/`,
     gray: `https://api.gray.xinc818.net/`,
-    prod: `https://api.xinc818.net/`,
+    prod: `https://api.xinc818.com/`,
   }
   return localStorage.env || hrefs[env];
 })();
